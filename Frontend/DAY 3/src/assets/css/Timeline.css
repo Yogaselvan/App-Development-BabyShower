@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.ros{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.timeline-page {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  .title22 {
+    align-self: center;
+    padding: 50px;
+    font-size: 2rem;
+  }
+
+  .timeline {
+    padding: 4rem;
+    display: flex;
+
+    .timeline-box {
+      flex-grow: 1;
+      height: 300px; /* TODO: Remove this */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .timeline-box-icon {
+        padding: 2rem;
+        font-size: 3rem;
+      }
+
+      .timeline-box-stepstatus {
+        font-size: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .check-circle-wrapper {
+          display: flex;
+
+          &.first {
+            justify-content: flex-end;
+            flex-grow: 1;
+          }
+
+          &.last {
+            justify-content: flex-start;
+            flex-grow: 1;
+          }
+
+          .check-circle {
+            background: #34495e;
+            height: 50px;
+            width: 50px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+          }
+        }
+
+        .step-connection {
+          height: 8px;
+          flex-grow: 1;
+          background: #34495e;
+        }
+      }
+
+      .timeline-box-stepname {
+        font-size: 1.3rem;
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+.timeline-box.uncompleted {
+  .timeline-box-stepstatus {
+    .check-circle-wrapper {
+      .check-circle {
+        background: #95a5a6 !important;
+        color: #95a5a6 !important;
+        height: 40px !important;
+        width: 40px !important;
+      }
+    }
+
+    .step-connection {
+      background: #95a5a6 !important;
+
+      &.gradient-left {
+        background: linear-gradient(90deg, rgba(52,73,94,1) 12%, rgba(149,165,166,1) 100%) !important;
+      }
+    }
+  }
+}
